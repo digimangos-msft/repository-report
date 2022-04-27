@@ -1,0 +1,19 @@
+name: Repository Compliance Report
+on:
+  workflow_dispatch:
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2.4.0
+      - name: Repository Compliance Report
+        uses: digimangos-report-dev/combined-compliance-reports/reporting/compliance-reports@main
+        with:
+          command: get_repository_compliance_report
+          token: ${{ secrets.GH_ACCESS_TOKEN }}
+          enterprise: poizen-inc
+          organization: digimangos-test-poizen
+          config_directory: ./config
+          exceptions_directory: ./exceptions
+          reporting_repository: digimangos-report-dev/repository-report
