@@ -13,7 +13,7 @@ jobs:
           command: get_repository_compliance_report
           token: ${{ secrets.GH_ACCESS_TOKEN }}
           enterprise: poizen-inc
-          organization: digimangos-test-poizen
+          organization: digimangos-repo-compliance-demo
           config_directory: ./config
           exceptions_directory: ./exceptions
           reporting_repository: digimangos-report-dev/repository-report
